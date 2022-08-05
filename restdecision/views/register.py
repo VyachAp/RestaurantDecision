@@ -19,6 +19,8 @@ class CreateUserView(generics.CreateAPIView):
     permission_classes = (IsAuthenticated,)
     serializer_class = CreateUserSerializer
 
+    # FIXME: TEST PURPOSES ONLY LOGIC, WE DON'T NEED TO RETURN PASSWORD, BUT WE DO IT NOW FOR LOGIN VIA OTHER USER
+    #  TEST PURPOSES
     def post(self, request, *args, **kwargs):
         # Crutch to obtain password in response
         data = OrderedDict()
